@@ -302,10 +302,7 @@ while x:
         system.create_account()
     if a == 3:
         system.deposit()
-        print(system)
-        print(system.banks[0].accounts)
-        print(system.banks[1].accounts)
-    if a == 3:
+    if a == 4:
         system.withdraw()
         print(system)
         print(system.banks[0].accounts)
