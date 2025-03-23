@@ -1,6 +1,7 @@
 import hashlib
 import random
 import os
+import pickle
 
 def create_pin(pin):
     hashed_pin = hashlib.sha512(pin.encode('utf-8')).hexdigest()
@@ -294,11 +295,12 @@ while run:
         continue
     command = int(command)
     if command == 0:
-        if not os.path.exists("bank_data.txt"):
+        if not os.path.exists("bank_data.pkl"):
             print("No session found!")
             continue
-        with open("bank_data.txt", "r") as file:
-            system = eval(file.read())
+        with open("bank_data.pkl", "rb") as file:
+            system = pickle.load(file)
+            print("Session loaded successfully!")
     if command == 1:
         system.create_bank()
     if command == 2:
@@ -313,5 +315,6 @@ while run:
         system.transfer()
 
 if input("Do you want to save your session? (y/n) ") == "y":
-    with open("bank_data.txt", "w") as file:
-        file.write(str(system))
+    with open("bank_data.pkl", "wb") as file:
+        pickle.dump(system, file)
+        print("Session saved successfully!")
