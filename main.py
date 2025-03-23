@@ -308,5 +308,7 @@ while x:
         system.take_out_credit()
     if a == 6:
         system.transfer()
-        print(system)
-        print(system.banks[0].accounts)
+
+if input("Do you want to save your session? (y/n) ") == "y":
+    with open("bank_data.txt", "w") as file:
+        file.write(str(system))
