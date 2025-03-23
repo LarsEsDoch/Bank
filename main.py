@@ -294,6 +294,9 @@ while run:
         continue
     command = int(command)
     if command == 0:
+        if not os.path.exists("bank_data.txt"):
+            print("No session found!")
+            continue
         with open("bank_data.txt", "r") as file:
             system = eval(file.read())
     if command == 1:
