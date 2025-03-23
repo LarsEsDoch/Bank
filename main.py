@@ -294,6 +294,9 @@ while x:
         continue
     a = int(a)
     if a == 0:
+        with open("bank_data.txt", "r") as file:
+            system = eval(file.read())
+    if a == 1:
         system.create_bank()
     if a == 1:
         system.create_account()
