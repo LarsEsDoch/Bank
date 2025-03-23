@@ -320,6 +320,8 @@ while run:
         system.take_out_credit()
     if command == 6:
         system.transfer()
+    if command == 7:
+        print(system)
 
 if input("Do you want to save your session? (y/n) ") == "y":
     with open("bank_data.pkl", "wb") as file:
