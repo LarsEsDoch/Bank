@@ -306,9 +306,7 @@ while x:
         system.withdraw()
     if a == 5:
         system.take_out_credit()
-        print(system)
-        print(system.banks[0].accounts)
-    if a == 5:
+    if a == 6:
         system.transfer()
         print(system)
         print(system.banks[0].accounts)
