@@ -304,9 +304,7 @@ while x:
         system.deposit()
     if a == 4:
         system.withdraw()
-        print(system)
-        print(system.banks[0].accounts)
-    if a == 4:
+    if a == 5:
         system.take_out_credit()
         print(system)
         print(system.banks[0].accounts)
