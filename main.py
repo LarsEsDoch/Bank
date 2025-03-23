@@ -298,7 +298,7 @@ while x:
             system = eval(file.read())
     if a == 1:
         system.create_bank()
-    if a == 1:
+    if a == 2:
         system.create_account()
     if a == 2:
         system.deposit()
