@@ -300,7 +300,7 @@ while x:
         system.create_bank()
     if a == 2:
         system.create_account()
-    if a == 2:
+    if a == 3:
         system.deposit()
         print(system)
         print(system.banks[0].accounts)
