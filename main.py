@@ -269,6 +269,13 @@ class Bank:
         bank2.balance += amount
         print(f"You paid {amount}€ to {account2.name} ({account2.iban})!")
 
+    def check_balance(self, iban):
+        if not system.find_account_by_iban(iban):
+            print("Account doesn't exist!")
+            return False
+        account = system.find_account_by_iban(iban)
+        return account.balance
+
 
 class Account:
 
