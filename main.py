@@ -284,29 +284,29 @@ class Account:
 
 system = System()
 print(f"Commands: \nLoad Session \nCreate Bank: 1 \nCreate Account: 2 \nDeposit: 3 \nWithdraw: 4 \nTake out credit: 5 \nTransfer: 6 \nExit: exit \n")
-x = True
-while x:
-    a = input("\nWhat do you want to do? ")
-    if a == "exit":
-        x = False
-    if a not in ["0", "1", "2", "3", "4", "5"]:
+run = True
+while run:
+    command = input("\nWhat do you want to do? ")
+    if command == "exit":
+        run = False
+    if command not in ["0", "1", "2", "3", "4", "5", "6"]:
         print("Command not found!")
         continue
-    a = int(a)
-    if a == 0:
+    command = int(command)
+    if command == 0:
         with open("bank_data.txt", "r") as file:
             system = eval(file.read())
-    if a == 1:
+    if command == 1:
         system.create_bank()
-    if a == 2:
+    if command == 2:
         system.create_account()
-    if a == 3:
+    if command == 3:
         system.deposit()
-    if a == 4:
+    if command == 4:
         system.withdraw()
-    if a == 5:
+    if command == 5:
         system.take_out_credit()
-    if a == 6:
+    if command == 6:
         system.transfer()
 
 if input("Do you want to save your session? (y/n) ") == "y":
