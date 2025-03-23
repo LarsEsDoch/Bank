@@ -1,5 +1,6 @@
 import hashlib
 import random
+import os
 
 def create_pin(pin):
     hashed_pin = hashlib.sha512(pin.encode('utf-8')).hexdigest()
