@@ -327,3 +327,6 @@ if input("Do you want to save your session? (y/n) ") == "y":
     with open("bank_data.pkl", "wb") as file:
         pickle.dump(system, file)
         print("Session saved successfully!")
+
+
+print("Thank you for using our banking system!")
