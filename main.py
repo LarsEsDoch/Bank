@@ -283,7 +283,7 @@ class Account:
 
 
 system = System()
-print(f"Commands: \nLoad Session \nCreate Bank: 1 \nCreate Account: 2 \nDeposit: 3 \nWithdraw: 4 \nTake out credit: 5 \nTransfer: 6 \nExit: exit \n")
+print(f"Commands: \nLoad Session: 0 \nCreate Bank: 1 \nCreate Account: 2 \nDeposit: 3 \nWithdraw: 4 \nTake out credit: 5 \nTransfer: 6 \nExit: exit \n")
 run = True
 while run:
     command = input("\nWhat do you want to do? ")
