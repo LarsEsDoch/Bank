@@ -181,6 +181,18 @@ class System:
             pin = input("Card Pin: ")
         bank.transfer(iban, amount, pin, bank2)
 
+    def check_balance(self):
+        bank_name = input("Bank Name: ")
+        while not self.get_bank(bank_name):
+            print("Bank doesn't exist!")
+            bank_name = input("Bank Name: ")
+        bank = self.get_bank(bank_name)
+        iban = input("Your IBAN: ")
+        while not self.find_account_by_iban(iban):
+            print("Account doesn't exist!")
+            iban = input("Your IBAN: ")
+        bank.check_balance(iban)
+
 
 
 class Bank:
