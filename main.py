@@ -297,12 +297,13 @@ class Account:
     def __init__(self, owner_name, start_balance, max_credit_amount, pin, blz):
         self.iban = generate_iban(blz)
         self.owner_name = owner_name
+        self.blz = blz
         self.balance = int(start_balance)
         self.max_credit_amount = int(max_credit_amount)
         self.pin = create_pin(pin)
 
     def __repr__(self):
-        return f"\nAccount IBAN: {self.iban} \nAccount Owner Name: {self.owner_name} \nAccount Balance: {self.balance}€ \nAccount maximal Credit Amount: {self.max_credit_amount} \nAccount Pin: {self.pin}\n"
+        return f"\nAccount IBAN: {self.iban}\nBank BLZ: {self.blz} \nAccount Owner Name: {self.owner_name} \nAccount Balance: {self.balance}€ \nAccount maximal Credit Amount: {self.max_credit_amount} \nAccount Pin: {self.pin}\n"
 
 
 system = System()
