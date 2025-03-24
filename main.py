@@ -313,7 +313,7 @@ while run:
     command = input("\nWhat do you want to do? ")
     if command == "exit":
         run = False
-    if command not in ["0", "1", "2", "3", "4", "5", "6"]:
+    if command not in ["0", "1", "2", "3", "4", "5", "6", "7"]:
         print("Command not found!")
         continue
     command = int(command)
@@ -337,7 +337,7 @@ while run:
     if command == 6:
         system.transfer()
     if command == 7:
-        print(system)
+        system.check_balance()
 
 if input("Do you want to save your session? (y/n) ") == "y":
     with open("bank_data.pkl", "wb") as file:
