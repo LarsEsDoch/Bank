@@ -259,7 +259,7 @@ class Bank:
         self.balance -= amount
         print(f"You have successfully taken out a loan of {account.balance}€ on the IBAN {iban} with owner {account.owner_name}!")
 
-    def transfer(self, iban, iban2, amount, pin, bank2):
+    def transfer(self, iban, iban2, amount, pin):
         amount = int(amount)
         if not system.find_account_by_iban(iban):
             print("Account doesn't exist!")
@@ -278,7 +278,7 @@ class Bank:
         account.balance -= amount
         self.balance -= amount
         account2.balance += amount
-        bank2.balance += amount
+        system.get_bank_by_blz(account2.blz).balance += amount
         print(f"You paid {amount}€ to {account2.name} ({account2.iban})!")
 
     def check_balance(self, iban):
